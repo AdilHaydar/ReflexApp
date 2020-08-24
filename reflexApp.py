@@ -177,8 +177,6 @@ ScreenManager:
            
 """
 
-#center_x: 175
-#center_y: 275
 
 class Ball(Widget):
     pos_x = NumericProperty()
@@ -194,7 +192,6 @@ class AimScreen(Screen):
 
     starter = NumericProperty()
     ender = NumericProperty()
-    #label = ObjectProperty() buna gerek yok
 
     aim = AimWidget()
     Clock.schedule_interval(aim.update, 1.0/60.0)
@@ -239,7 +236,6 @@ class ReflexScreen(Screen):
         self.ids.reflex_button.text = 'CLICK !!!'
         self.start = time()
 
-        #return start
 
     def get_time_diff(self):
         return self.end - self.start
@@ -250,7 +246,6 @@ class ReflexScreen(Screen):
     def on_leave(self, *args):
             self.difference = round(self.end-self.start,4) * 1000
             self.manager.get_screen('main').ids.score_label.text = str(round(self.difference, 4))+" MS "
-            #return end
 
 class MainScreen(Screen):
     pass
